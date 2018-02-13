@@ -7,12 +7,12 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-class Application {
+open class Application {
 
 	private val log = LoggerFactory.getLogger(Application::class.java)
 
 	@Bean
-	fun init(repository: CustomerRepository) = CommandLineRunner {
+    open fun init(repository: CustomerRepository) = CommandLineRunner {
 			// save a couple of customers
 			repository.save(Customer("Jack", "Bauer"))
 			repository.save(Customer("Chloe", "O'Brian"))
